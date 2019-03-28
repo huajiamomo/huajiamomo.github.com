@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="香香的博客">
 <meta property="og:description" content="一、总结1、优点: 可以把局部变量驻留在内存中,避免使用全局变量;    PS:全局变量在复杂程序中会造成许多麻烦（比如命名冲突，垃圾回收等），所以推荐使用私有的,封装的局部变量。而闭包可以实现这一点。2、缺点：由于闭包里作用域返回的局部变量资源不会被立刻销毁回收,可能会占用更多的内存,所以过度使用闭包会导致性能下降    PS:用完要及时让垃圾回收器回收  fn=null//及时解除引用，否则会">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-21T16:05:04.910Z">
+<meta property="og:updated_time" content="2019-03-28T06:44:13.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="一、总结1、优点: 可以把局部变量驻留在内存中,避免使用全局变量;    PS:全局变量在复杂程序中会造成许多麻烦（比如命名冲突，垃圾回收等），所以推荐使用私有的,封装的局部变量。而闭包可以实现这一点。2、缺点：由于闭包里作用域返回的局部变量资源不会被立刻销毁回收,可能会占用更多的内存,所以过度使用闭包会导致性能下降    PS:用完要及时让垃圾回收器回收  fn=null//及时解除引用，否则会">
@@ -178,7 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、总结"><a href="#一、总结" class="headerlink" title="一、总结"></a>一、总结</h3><p>1、优点: 可以把局部变量驻留在内存中,避免使用全局变量;<br>    PS:全局变量在复杂程序中会造成许多麻烦（比如命名冲突，垃圾回收等），所以推荐使用私有的,封装的局部变量。而闭包可以实现这一点。<br>2、缺点：由于闭包里作用域返回的局部变量资源不会被立刻销毁回收,可能会占用更多的内存,所以过度使用闭包会导致性能下降<br>    PS:用完要及时让垃圾回收器回收  fn=null//及时解除引用，否则会占用更多存<br>3、闭包两种访问方式会有不同结果，()()双括号访问方式会出错，先赋值后的单括号访问方式是对的</p>
+        <h3 id="一、总结"><a href="#一、总结" class="headerlink" title="一、总结"></a>一、总结</h3><p>1、优点: 可以把局部变量驻留在内存中,避免使用全局变量;<br>    PS:全局变量在复杂程序中会造成许多麻烦（比如命名冲突，垃圾回收等），所以推荐使用私有的,封装的局部变量。而闭包可以实现这一点。<br>2、缺点：由于闭包里作用域返回的局部变量资源不会被立刻销毁回收,可能会占用更多的内存,所以过度使用闭包会导致性能下降<br>    PS:用完要及时让垃圾回收器回收  fn=null//及时解除引用，否则会占用更多存<br>3、闭包两种访问方式会有不同结果，()()双括号访问方式会出错，先赋值后的单括号访问方式是对的<br><a id="more"></a></p>
 <h3 id="二、js闭包作用"><a href="#二、js闭包作用" class="headerlink" title="二、js闭包作用"></a>二、js闭包作用</h3><h4 id="闭包的相关概念"><a href="#闭包的相关概念" class="headerlink" title="闭包的相关概念"></a>闭包的相关概念</h4><p>闭包的英文单词是closure，是指有权访问另一个函数作用域中变量的函数。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。内层的函数可以使用外层函数的所有变量，即使外层函数已经执行完毕。</p>
 <h4 id="闭包的相关知识点"><a href="#闭包的相关知识点" class="headerlink" title="闭包的相关知识点"></a>闭包的相关知识点</h4><pre><code>1. 常见的方式是在函数内部创建另一个函数
 2. 闭包的第一个用途：通过闭包可以访问局部变量
@@ -280,11 +280,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/12/作品链接/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/28/paper/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          作品链接
+          网页性能优化
         
       </div>
     </a>
