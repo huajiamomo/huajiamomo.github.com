@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="香香的博客">
 <meta property="og:description" content="一、网页生成的过程要理解网页性能为什么不好，就要了解网页是怎么生成的。 网页的生成过程，大致可以分成五步： 1、HTML代码转化成DOM 2、CSS代码转化成CSSOM（CSS Object Model） 3、结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息） 4、生成布局（flow），即将所有渲染树的所有节点进行平面合成 5、将布局绘制（paint）在屏幕上 这五步里面，第一步到第">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/03/28/img/1.png">
-<meta property="og:updated_time" content="2019-03-28T06:58:58.521Z">
+<meta property="og:image" content="http://huajiamomo.github.io/img/1.png">
+<meta property="og:updated_time" content="2019-03-28T08:08:30.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页性能优化">
 <meta name="twitter:description" content="一、网页生成的过程要理解网页性能为什么不好，就要了解网页是怎么生成的。 网页的生成过程，大致可以分成五步： 1、HTML代码转化成DOM 2、CSS代码转化成CSSOM（CSS Object Model） 3、结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息） 4、生成布局（flow），即将所有渲染树的所有节点进行平面合成 5、将布局绘制（paint）在屏幕上 这五步里面，第一步到第">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/28/img/1.png">
+<meta name="twitter:image" content="http://huajiamomo.github.io/img/1.png">
   
     <link rel="alternative" href="/atom.xml" title="香香的博客" type="application/atom+xml">
   
@@ -180,7 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、网页生成的过程"><a href="#一、网页生成的过程" class="headerlink" title="一、网页生成的过程"></a>一、网页生成的过程</h3><p>要理解网页性能为什么不好，就要了解网页是怎么生成的。<br><img src="../img/1.png" alt="网页生成过程"></p>
+        <h3 id="一、网页生成的过程"><a href="#一、网页生成的过程" class="headerlink" title="一、网页生成的过程"></a>一、网页生成的过程</h3><p>要理解网页性能为什么不好，就要了解网页是怎么生成的。<br><img src="http://huajiamomo.github.io/img/1.png" alt=""></p>
 <pre><code>网页的生成过程，大致可以分成五步：
 1、HTML代码转化成DOM
 2、CSS代码转化成CSSOM（CSS Object Model）
@@ -188,6 +188,25 @@
 4、生成布局（flow），即将所有渲染树的所有节点进行平面合成
 5、将布局绘制（paint）在屏幕上
 </code></pre><p>这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。<br>“生成布局”（flow）和”绘制”（paint）这两步，合称为”渲染”（render）。</p>
+<h3 id="二、重排和重绘"><a href="#二、重排和重绘" class="headerlink" title="二、重排和重绘"></a>二、重排和重绘</h3><p>网页生成的时候，至少会渲染一次。用户访问的过程中，还会不断重新渲染。重新渲染，就需要重新生成布局和重新绘制。前者叫做”重排”（reflow），后者叫做”重绘”（repaint）。</p>
+<pre><code>以下三种情况，会导致网页重新渲染：
+1、修改DOM
+2、修改样式表
+3、用户事件（比如鼠标悬停、页面滚动、输入框键入文字、改变窗口大小等等）
+</code></pre><p>注意：<br>“重绘”不一定需要”重排”，比如改变某个网页元素的颜色，就只会触发”重绘”，不会触发”重排”，因为布局没有改变。<br>“重排”必然导致”重绘”，比如改变一个网页元素的位置，就会同时触发”重排”和”重绘”，因为布局改变了。</p>
+<h3 id="三、对性能的影响"><a href="#三、对性能的影响" class="headerlink" title="三、对性能的影响"></a>三、对性能的影响</h3><p>重排和重绘会不断触发，这是不可避免的。但是，它们非常耗费资源，是导致网页性能低下的根本原因。<br><strong>提高网页性能，就是要降低”重排”和”重绘”的频率和成本，尽量少触发重新渲染。</strong></p>
+<pre><code>一般的规则是：
+样式表越简单，重排和重绘就越快。
+重排和重绘的DOM元素层级越高，成本就越高。
+table元素的重排和重绘成本，要高于div元素
+</code></pre><h3 id="四、提高性能的技巧"><a href="#四、提高性能的技巧" class="headerlink" title="四、提高性能的技巧"></a>四、提高性能的技巧</h3><p>1、DOM 的多个读操作（或多个写操作），应该放在一起，不要两个读操作之间，加入一个写操作。<br>2、如果某个样式是通过重排得到的，那么最好缓存结果，避免下一次用到的时候，浏览器又要重排。<br>3、不要一条条地改变样式，而要通过改变class，或者csstext属性，一次性地改变样式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// bad</span><br><span class="line">var left = 10;</span><br><span class="line">var top = 10;</span><br><span class="line">el.style.left = left + &quot;px&quot;;</span><br><span class="line">el.style.top  = top  + &quot;px&quot;;</span><br><span class="line"></span><br><span class="line">// good </span><br><span class="line">el.className += &quot; theclassname&quot;;</span><br><span class="line"></span><br><span class="line">// good</span><br><span class="line">el.style.cssText += &quot;; left: &quot; + left + &quot;px; top: &quot; + top + &quot;px;&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>4、把DOM离线后修改。</p>
+<pre><code>使用documentFragment 对象在内存里操作DOM
+先把DOM给display:none(有一次reflow)，然后你想怎么改就怎么改。比如修改100次，然后再把他显示出来。
+clone一个DOM结点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下。
+</code></pre><p>6、position属性为absolute或fixed的元素，重排的开销会比较小，因为不用考虑它对其他元素的影响。<br><code>为动画的HTML元件使用fixed或absoult的position ，那么修改他们的CSS是不会reflow的。</code></p>
+<p>7、只在必要的时候，才将元素的display属性为可见，因为不可见的元素不影响重排和重绘。另外，visibility : hidden的元素只对重绘有影响，不影响重排。</p>
+<p>8、使用 window.requestAnimationFrame()、window.requestIdleCallback() 这两个方法调节重新渲染。</p>
 
       
 
@@ -280,6 +299,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/07/作品链接/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          作品链接
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/05/闭包/" id="article-nav-older" class="article-nav-link-wrap">
