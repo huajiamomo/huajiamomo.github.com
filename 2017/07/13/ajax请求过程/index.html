@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 香香的博客</title>
+  <title>ajax请求过程 | 香香的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="香香的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="1.创建Ajax核心对象var oAjax=new XMLHttpRequest();注意：处理兼容问题  if(window.XMLHttpRequest){}else{}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax请求过程">
+<meta property="og:url" content="http://yoursite.com/2017/07/13/ajax请求过程/index.html">
 <meta property="og:site_name" content="香香的博客">
+<meta property="og:description" content="1.创建Ajax核心对象var oAjax=new XMLHttpRequest();注意：处理兼容问题  if(window.XMLHttpRequest){}else{}">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-27T01:22:26.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="香香的博客">
+<meta name="twitter:title" content="ajax请求过程">
+<meta name="twitter:description" content="1.创建Ajax核心对象var oAjax=new XMLHttpRequest();注意：处理兼容问题  if(window.XMLHttpRequest){}else{}">
   
     <link rel="alternative" href="/atom.xml" title="香香的博客" type="application/atom+xml">
   
@@ -154,315 +158,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ajax请求过程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ajax请求过程
+    </h1>
+  
+
+        
+        <a href="/2017/07/13/ajax请求过程/" class="archive-article-date">
+  	<time datetime="2017-07-13T10:26:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-创建Ajax核心对象"><a href="#1-创建Ajax核心对象" class="headerlink" title="1.创建Ajax核心对象"></a>1.创建Ajax核心对象</h3><p>var oAjax=new XMLHttpRequest();<br>注意：处理兼容问题  if(window.XMLHttpRequest){}else{}<br><a id="more"></a></p>
+<h3 id="2-向服务器发送请求"><a href="#2-向服务器发送请求" class="headerlink" title="2.向服务器发送请求"></a>2.向服务器发送请求</h3><p>a.get请求<br>    oAjax.open(‘GET’,’url’,true);<br>    oAjax.send();<br>b.post请求<br>    oAjax.open(‘POST’,’url’,true);<br>    oAjax.setRequestHeader(‘content-type’,’’);//设置请求头<br>    oAjax.send(‘string参数’);<br>注意：true异步请求  false同步请求</p>
+<h3 id="3-服务器响应，接收数据"><a href="#3-服务器响应，接收数据" class="headerlink" title="3.服务器响应，接收数据"></a>3.服务器响应，接收数据</h3><p>oAjax.onreadystatechange=function(){};<br>a.请求状态 oAjax.readyState<br>    0：请求未初始化<br>    1：服务器连接建立<br>    2：请求已接收<br>    3：请求处理中<br>    4：请求处理完成，响应已就绪  在这个时候获得数据<br>b.响应状态码 oAjax.status<br>    200：成功<br>    304：该资源在上次请求后没有任何修改（浏览器的缓存机制）<br>    403：服务器拒绝请求<br>    404：服务器找不到请求的网页<br>    408：请求超时<br>    500：服务器内部错误</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>大灰狼爱上了小白兔<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/07/作品链接/" class="archive-article-date">
-  	<time datetime="2019-08-07T07:26:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/07/作品链接/">作品链接</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/28/网页性能优化/" class="archive-article-date">
-  	<time datetime="2018-03-28T06:29:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/28/网页性能优化/">网页性能优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/25/实现动画/" class="archive-article-date">
-  	<time datetime="2018-03-25T03:38:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/25/实现动画/">实现动画</a>
-    </h1>
-  
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/07/13/ajax请求过程/" alt="微信分享二维码">
+    </div>
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/24/css动画和js动画对比/" class="archive-article-date">
-  	<time datetime="2018-03-24T15:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/24/css动画和js动画对比/">css动画和js动画对比</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/10/flex/" class="archive-article-date">
-  	<time datetime="2018-02-10T06:29:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/10/flex/">flex布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/08/模板引擎/" class="archive-article-date">
-  	<time datetime="2018-01-08T08:08:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/08/模板引擎/">模板引擎</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/闭包/" class="archive-article-date">
-  	<time datetime="2018-01-05T05:59:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/闭包/">闭包</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+<div class="mask js-mask"></div>
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/01/二叉树/" class="archive-article-date">
-  	<time datetime="2017-11-01T08:03:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/01/二叉树/">二叉树</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/28/快速排序的实现/" class="archive-article-date">
-  	<time datetime="2017-10-28T06:21:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-28</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/10/23/Cookie的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Cookie的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/28/快速排序的实现/">快速排序的实现</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/23/Cookie的使用/" class="archive-article-date">
-  	<time datetime="2017-10-23T05:15:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/23/Cookie的使用/">Cookie的使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -486,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
